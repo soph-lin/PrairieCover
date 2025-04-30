@@ -1,0 +1,46 @@
+{
+    "manifest_version": 3,
+    "name": "PrairieCover",
+    "description": "Cover correct/incorrect answers on past PrairieLearn exams.",
+    "version": "0",
+    "icons": {
+        "16": "/public/icon/16.png",
+        "32": "/public/icon/32.png",
+        "48": "/public/icon/48.png",
+        "128": "/public/icon/128.png"
+    },
+    "host_permissions": [
+        "https://us.prairielearn.com/pl/course_instance/*/instance_question/*/"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "/public/icon/16.png",
+            "32": "/public/icon/32.png"
+        },
+      "default_title": "Hey there"
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            "matches": [
+                "https://us.prairielearn.com/pl/course_instance/*/instance_question/*/"
+            ],
+            "css": [
+                "/src/css/hide.css"
+            ],
+            "js": [
+                "/src/content/hide.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/src/css/show.css"
+            ],
+            "matches": [
+                "https://us.prairielearn.com/*"
+            ]
+        }
+    ]
+}

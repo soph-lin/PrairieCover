@@ -1,0 +1,22 @@
+.form-check-input {
+    background-color: #fff !important;
+    border-color: rgba(0,0,0,.25) !important;
+}
+
+.form-check-input:checked[type=radio] {
+    background-image: none !important;
+}
+
+select {
+    color: transparent !important;
+}
+
+.text-bg-success,
+.text-bg-danger,
+.grading-block,
+[data-testid="submission-with-feedback"],
+[data-testid="submission-block"],
+.mathjax_ignore,
+.pl-order-blocks-container {
+    display: none !important;
+}
